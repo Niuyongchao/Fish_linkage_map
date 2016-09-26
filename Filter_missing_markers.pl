@@ -11,7 +11,7 @@ while (<IN>){
 		chomp;
 		@_=split;
 		my $total_sample=$#_-1;
-		my $missing=$_=~s/\-\-//g;
+		my $missing=$_=~s/\-\-/\-\-/g;
 		my $miss_rate=$missing/$total_sample;
 		print OUT "$_\n" if $miss_rate<=0.1;
 	}
